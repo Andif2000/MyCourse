@@ -7,12 +7,15 @@ import * as ImagePicker from 'expo-image-picker'
 import CircleButton from './components/CircleButton';
 import IconButton from './components/IconButton';
 import EmojiPicker from './components/EmojiPicker';
+import EmojiList from './components/EmojiList';
+import EmojiSticker from './components/EmojiSticker';
 import { useState } from 'react';
 
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAppOptions, setshowAppOptions] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [pickedEmoji, setPickedEmoji] = useState(null);
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -47,6 +50,8 @@ export default function App() {
           PlaceholderImgSource={PlaceholderImg}
           SelectedImage={selectedImage}
         />
+        {pickedEmoji !== null ?
+          <EmojiSticker imageSize={40} stickerSource={pickedEmoji} /> : null}
         {
           showAppOptions ?
             (<View style={styles.optionsContainer}>
@@ -63,7 +68,7 @@ export default function App() {
         }
       </View>
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
-
+        <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
     </SafeAreaView>
   );
