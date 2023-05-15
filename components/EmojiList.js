@@ -3,12 +3,12 @@ import React, { useState } from 'react'
 
 const EmojiList = ({ onSelect, onCloseModal }) => {
     const [emoji] = useState([
-        require('../assets/image/emo2.png'),
         require('../assets/image/emo1.png'),
-        require('../assets/image/emo4.png'),
+        require('../assets/image/emo2.png'),
         require('../assets/image/emo3.png'),
-        require('../assets/image/emo6.jpg'),
+        require('../assets/image/emo4.png'),
         require('../assets/image/emo5.jpg'),
+        require('../assets/image/emo6.jpg'),
     ])
     return (
         <FlatList
