@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         height: 84,
         borderWidth: 4,
         marginHorizontal: 85,
-        borderColor: '#ffd33d',
         borderRadius: 42,
+        borderColor: '#ffd33d',
         padding: 3,
     },
     circleButton: {
