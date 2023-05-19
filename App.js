@@ -9,6 +9,7 @@ import IconButton from './components/IconButton';
 import EmojiPicker from './components/EmojiPicker';
 import EmojiList from './components/EmojiList';
 import EmojiSticker from './components/EmojiSticker';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useState } from 'react';
 
 export default function App() {
@@ -44,7 +45,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#25282e', alignItems: 'center' }}>
+    <GestureHandlerRootView  style={{ flex: 1, backgroundColor: '#25282e', alignItems: 'center' }}>
       <View style={{ flex: 1, paddingTop: 58 }}>
         <ImageViewer
           PlaceholderImgSource={PlaceholderImg}
@@ -70,13 +71,13 @@ export default function App() {
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
       </EmojiPicker>
-    </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }
 const styles = StyleSheet.create({
   optionsContainer: {
-    position: 'absolute',
     bottom: 80,
+    position: 'absolute',
     alignItems: 'center'
   },
   optionsRow: {
