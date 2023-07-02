@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
-const PlaceholderImg = require('./assets/image/background1.jpeg')
 import * as ImagePicker from 'expo-image-picker'
 import CircleButton from './components/CircleButton';
 import IconButton from './components/IconButton';
@@ -11,6 +10,7 @@ import EmojiList from './components/EmojiList';
 import EmojiSticker from './components/EmojiSticker';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useState } from 'react';
+const PlaceholderImg = require('./assets/image/background1.jpeg')
 
 export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
